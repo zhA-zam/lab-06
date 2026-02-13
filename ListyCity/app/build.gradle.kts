@@ -33,15 +33,21 @@ android {
     }
 }
 
+tasks.withType<Test> {
+    useJUnitPlatform()
+}
+
 dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.ext.junit)
-    androidTestImplementation(libs.espresso.core)
+    //testImplementation(libs.junit)
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.0.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.0.1")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.9.2")
+    androidTestImplementation(libs.ext.junit)
+    androidTestImplementation(libs.espresso.core)
+    //noinspection GradlePath
     implementation(files("C:/Users/zohaz/AppData/Local/Android/Sdk/platforms/android-36/android.jar"))
 }

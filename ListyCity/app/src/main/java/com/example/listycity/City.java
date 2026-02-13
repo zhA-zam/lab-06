@@ -6,9 +6,7 @@ import java.lang.Comparable;
  * This is a class that defines a City.
  *
  * @author zohaz
- * @see ...
  * @version 1.0
- *
  */
 public class City implements Comparable<City> {
 

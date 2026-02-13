@@ -37,7 +37,7 @@ public class CityList {
     }
 
     /**
-     * Description
+     * This returns true if the list contains a given city, false otherwise
      *
      * @param city city item
      * @return Return boolean value whether a given city is in the list
@@ -48,7 +48,7 @@ public class CityList {
     }
 
     /**
-     * Description
+     * This deletes an existing city from the list
      *
      * @param city city item
      */
@@ -63,7 +63,7 @@ public class CityList {
     }
 
     /**
-     * Description
+     * This returns the number of cities in the list
      *
      * @return Number of cities in the list
      */

@@ -68,9 +68,9 @@ public class CityListTest {
     @Test
     void testDeleteCity() {
         CityList cityList = mockCityList();
-        CityList cityList2 = mockCityList();
+
         // Test to see if deleteCity actually removes a city from the list
-        City city1 = new City("Edmonton", "Alberta");
+        City city1 = new City("Calgary", "Alberta");
         City city2 = new City("Regina", "Saskatchewan");
         City city3 = new City("Charlottetown", "Prince Edward Island");
 
@@ -78,11 +78,13 @@ public class CityListTest {
         cityList.add(city2);
         cityList.add(city3);
 
-        cityList2.add(city1);
-        cityList2.add(city2);
+        assertEquals(4, cityList.countCities());
+
         // Assert city not in list after deletion
         cityList.deleteCity(city3);
-        assertSame(cityList2, cityList);
+
+        assertEquals(3, cityList.countCities());
+        assertFalse(cityList.hasCity(city3));
     }
 
     @Test
@@ -91,8 +93,8 @@ public class CityListTest {
         // Test to see if the exception is actually thrown
         City city = new City("Ottawa", "Ontario");
 
-        // Test removing a city not in the list
-        cityList.deleteCity(city);
+        assertFalse(cityList.hasCity(city)); // Verify city not in list
+
         assertThrows(NoSuchElementException.class, () -> {
             cityList.deleteCity(city);
         });
@@ -102,7 +104,7 @@ public class CityListTest {
     void testCountCities() {
         CityList cityList = mockCityList();
         // Test to see whether countCities returns how many cities are in the list
-        City city1 = new City("Edmonton", "Alberta");
+        City city1 = new City("Calgary", "Alberta");
         City city2 = new City("Regina", "Saskatchewan");
         City city3 = new City("Charlottetown", "Prince Edward Island");
 
@@ -111,6 +113,6 @@ public class CityListTest {
         cityList.add(city2);
         cityList.add(city3);
 
-        assertEquals(3, cityList.countCities());
+        assertEquals(4, cityList.countCities()); // expected = 4 because mockCity is always in cityList
     }
 }
