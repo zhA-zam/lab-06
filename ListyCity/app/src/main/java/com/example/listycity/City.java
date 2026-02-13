@@ -16,8 +16,8 @@ public class City implements Comparable<City> {
     /**
      * This is the constructor of the City class.
      *
-     * @param city      description...
-     * @param province  description...
+     * @param city      name of City object's city
+     * @param province  name of City object's province
      */
     City(String city, String province) {
         this.city = city;

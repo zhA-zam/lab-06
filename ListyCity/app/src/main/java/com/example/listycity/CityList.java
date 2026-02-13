@@ -17,7 +17,7 @@ public class CityList {
     /**
      * This adds a city to the list if the city does not exist
      *
-     * @param city This is a candidate city to add
+     * @param city      This is a candidate city to add
      */
     public void add(City city) {
         if (cities.contains(city)) {
@@ -28,7 +28,7 @@ public class CityList {
 
     /**
      * This returns a sorted list of cities
-     * @return Return the sorted list
+     * @return          Return the sorted list
      */
     public List<City> getCities() {
         List<City> list = cities;
@@ -39,8 +39,8 @@ public class CityList {
     /**
      * This returns true if the list contains a given city, false otherwise
      *
-     * @param city city item
-     * @return Return boolean value whether a given city is in the list
+     * @param city      city object
+     * @return          Return boolean value whether a given city is in the list
      */
     public boolean hasCity(City city) {
         // When given a city, return whether or not it is in the list
@@ -50,7 +50,7 @@ public class CityList {
     /**
      * This deletes an existing city from the list
      *
-     * @param city city item
+     * @param city      city object
      */
     public void deleteCity(City city) {
         // Check if a city is present in the list. If it does then remove
@@ -65,7 +65,7 @@ public class CityList {
     /**
      * This returns the number of cities in the list
      *
-     * @return Number of cities in the list
+     * @return          Number of cities in the list
      */
     public int countCities() {
         // Return how many cities are in the list
